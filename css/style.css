@@ -32,7 +32,7 @@ audio:not([controls]) {
 a {
     background-color: transparent;
     text-decoration: none;
-    padding: 0 5px;
+    padding: 0;
 }
 a.logo {
     background-color: transparent;
@@ -54,7 +54,8 @@ small {
     font-size: 80%;
 }
 img {
-    border-style: none;
+	border-style: none;
+	width: 100%;
 }
 code {
     font-family: monospace, monospace;
@@ -154,7 +155,7 @@ h5,
 h6 {
     font-family: "Segoe UI", Arial, sans-serif;
     font-weight: 400;
-    margin: 5px 0;
+    margin: 10px 0;
 }
 h3.menu {
     font-family: "Segoe UI", Arial, sans-serif;
@@ -173,44 +174,13 @@ hr {
 img {
     vertical-align: middle;
 }
+
+.social-icon {
+	margin: 5px;
+	width: 40px;
+}
 a {
-    color: inherit;
-}
-.w3-button {
-    border: none;
-    display: inline-block;
-    padding: 8px 16px;
-    vertical-align: middle;
-    overflow: hidden;
-    text-decoration: none;
-    color: inherit;
-    background-color: inherit;
-    text-align: center;
-    cursor: pointer;
-    white-space: nowrap;
-}
-.w3-button {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-.w3-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.3;
-}
-:disabled * {
-    pointer-events: none;
-}
-.w3-tag {
-    background-color: #000;
-    color: #fff;
-    display: inline-block;
-    padding-left: 8px;
-    padding-right: 8px;
-    text-align: center;
+    color: blue;
 }
 .w3-display-container {
     position: relative;
@@ -362,18 +332,112 @@ w3-fifth {
 .w3-display-hover {
     display: none;
 }
+
+.w3-row-padding-large {
+    padding-left: 32px;
+}
 .w3-row-padding,
 .w3-row-padding > .w3-quarter,
 .w3-row-padding > .w3-third {
-    padding: 16px;
+	padding: 16px;
 	z-index:9;
 }
+
+.padding-element-bottom {
+	padding-bottom: 3rem;
+}
+
+.parent-element {
+  display: flex;
+  width: 100%;
+}
+
+.child-element {
+  flex: 1;
+}
+
+.book-pair-parent-element { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    width: 100%; 
+} 
+.book-pair-child-element { 
+    margin: 5px; 
+}
+
+.read-pair-parent-element { 
+	display: flex;
+    justify-content: center;
+	margin-bottom: 2rem;
+    width: 100%; 
+} 
+.read-pair-child-element { 
+    margin: 5px; 
+}
+
+.read-max {
+	max-width: 15rem;
+}
+
+.logo {
+	width: 64px;
+}
+
+.books-link {
+	margin: 1rem 0 0 1rem;
+	max-width: 16rem;
+}
+
+.read-margin {
+	margin-bottom: 2rem;
+}
+
+.read-figcaption {
+	min-height: 10rem;
+}
+
+.podcast-icon {
+	width: 64px;
+}
+
+.social-icons {
+	margin: 0;
+	width: 40px;
+}
+
+.centre {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+figcaption {
+	margin: 2em 0 2em 1em;
+	text-align: center;
+}
+
+.padding-large {
+	padding: 2em;
+}
+
+.text-white {
+    color: #000 !important;
+    background-color: #fff !important;
+}
+
+
 @media (max-width: 800px) {
     .w3-row-padding,
     .w3-row-padding > .w3-quarter,
     .w3-row-padding > .w3-third {
         padding: 6px;
     }
+	.book-pair-parent-element { 
+    display: block; 
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px; 
+    width: 100%; 
+} 
 }
 .w3-container {
     padding: 0.01em 16px;
@@ -487,13 +551,7 @@ w3-fifth {
 .w3-justify {
     text-align: justify !important;
 }
-.w3-center {
-    text-align: center !important;
-}
-.w3-code {
-    margin-top: 16px !important;
-    margin-bottom: 16px !important;
-}
+
 .w3-margin {
     margin: 16px !important;
 }
@@ -516,7 +574,7 @@ w3-fifth {
     padding: 8px 16px !important;
 }
 .w3-padding-large {
-    padding: 12px 12em !important;
+    padding: 12px 24px !important;
 }
 .w3-padding-menu {
     padding: 8px !important;
@@ -541,12 +599,6 @@ w3-fifth {
     padding-top: 64px !important;
     padding-bottom: 64px !important;
 }
-.w3-padding-top-64 {
-    padding-top: 64px !important;
-}
-.w3-padding-top-48 {
-    padding-top: 48px !important;
-}
 .w3-padding-top-32 {
     padding-top: 32px !important;
 }
@@ -569,10 +621,7 @@ w3-fifth {
     background-color: #f44336 !important;
 }
 .w3-hover-white:hover,
-.w3-white {
-    color: #000 !important;
-    background-color: #fff !important;
-}
+
 .w3-black,
 .w3-hover-black:hover {
     color: #fff !important;
@@ -645,10 +694,6 @@ hr.black {
     position: fixed;
     right: 0;
     z-index: 1;
-}
-
-.margin-bottom {
-	margin-bottom: 1.5em;
 }
 .padding2 {
     padding-bottom: 2em;
@@ -735,7 +780,7 @@ hr.style-one {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    margin-bottom: 1em;
+    margin: 0 5em 1em;
 }
 .lineHeader:after {
     margin-left: 1em;
@@ -840,8 +885,8 @@ hr.grey {
 }
 
 .menu-box {
-	margin: 12px 11em;
-	padding: 4px 0;
+	margin: 12px 0px;
+	padding: 4px 16px;
 	z-index:999;
 }
 
@@ -1058,22 +1103,4 @@ hr.grey {
 .gototop::after{
   right: 18px;
   transform: rotate(-45deg);
-}
-
-.flex-container {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-}
-
-.flex-items:nth-child(1) {
-  display: block;
-  flex: 0 0 350px;
-  padding: 1em;
-}
-
-.flex-items:nth-child(2) {
-  display: block;
-  flex: 1;
-  padding: 1em 3em;
 }
