@@ -425,6 +425,9 @@ figcaption {
     background-color: #fff !important;
 }
 
+.gallery-image {
+	max-width: 20em;
+}
 
 @media (max-width: 800px) {
     .w3-row-padding,
