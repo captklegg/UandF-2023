@@ -191,6 +191,9 @@ a {
     position: relative;
     top: 6px;
 }
+.w3-center {
+	text-align: center;
+}
 #main,
 .w3-main {
     transition: margin-left 0.4s;
@@ -226,7 +229,7 @@ w3-fifth {
 	width:100%
 }
 .w3-half{
-	width:49.99999%
+	width:49.99999%;
 }
 .w3-row-padding,
 .w3-row-padding>.w3-half,
@@ -281,10 +284,17 @@ w3-fifth {
 .w3-show-inline-block {
     display: inline-block !important;
 }
+
+.social-media-links {
+	padding: 0 100px;
+}
 @media (max-width: 600px) {
     .w3-hide-small {
         display: none !important;
     }
+	.w3-half {
+		width: 100%;
+	}
 }
 @media (min-width: 993px) {
     .w3-hide-large {
@@ -295,7 +305,10 @@ w3-fifth {
     .w3-main {
         margin-left: 0 !important;
         margin-right: 0 !important;
-    }
+    }	
+	.w3-half {
+		width: 100%;
+	}
 }
 .w3-bottom,
 .w3-top {
