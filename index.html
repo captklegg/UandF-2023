@@ -52,6 +52,145 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}</style>
 
+	<link rel="stylesheet" href="slider/css/swiffy-slider.min.css">
+    <script src="slider/js/swiffy-slider.min.js" defer></script>
+
+
+
+    <link href="slider/css/slider-bootstrap.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+        window.addEventListener('load', () => {
+            hljs.highlightAll();
+        });
+
+        function showAndHightlightCode(sliderElement) {
+            const highlightButton = window.event.target;
+            if (!sliderElement) {
+                sliderElement = highlightButton.parentElement.querySelector(".swiffy-slider");
+            }
+            if (!sliderElement) {
+                sliderElement = highlightButton.parentElement;
+            }
+            //Remove excess indention from markup
+            const lines = sliderElement.outerHTML.split("\n");
+            const lastLine = lines[lines.length - 1];
+            const numberOfSpacers = lastLine.indexOf("<");
+            const spaceString = lastLine.substring(0, numberOfSpacers);
+            console.log(numberOfSpacers.length);
+            let markup = "";
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i];
+                if (line.startsWith(spaceString)) {
+                    markup += line.substring(numberOfSpacers) + "\n";
+                } else {
+                    markup += line + "\n";
+                }
+            }
+
+            const highlightedCode = hljs.highlight(markup, {
+                language: 'html'
+            }).value;
+
+            const newPre = document.createElement("pre");
+            newPre.classList.add("p-2");
+            newPre.classList.add("p-lg-4");
+            newPre.classList.add("my-2");
+            newPre.classList.add("my-lg-4");
+            newPre.classList.add("bg-light");
+            const newCode = document.createElement("code");
+            newCode.classList.add("language-html");
+            newCode.innerHTML = highlightedCode;
+            newPre.appendChild(newCode);
+
+            highlightButton.parentElement.insertBefore(newPre, null);
+            highlightButton.remove();
+        }
+    </script>
+    <style>
+        html,
+        body {
+            font-family: 'Barlow Semi Condensed', sans-serif;
+            scroll-snap-type: y proximity;
+            scroll-behavior: smooth;
+        }
+        
+        code {
+            border: 1px solid #ececec;
+            border-radius: .25rem;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            border-radius: 0;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: none;
+        }
+        
+        .lead {
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+        
+        .btn-primary {
+            color: #fff;
+            background-color: #DF1E1E;
+            border-color: #DF1E1E;
+        }
+        
+        .btn-outline-primary {
+            color: #DF1E1E;
+            border-color: #DF1E1E;
+        }
+        
+        .btn-outline-white {
+            color: #fff;
+            border-color: #fff;
+        }
+        
+        .btn-link {
+            color: #520000;
+        }
+        
+        .nav-link.active {
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            position: absolute;
+            border-bottom: 2px solid #fff;
+            display: block;
+            left: .5rem;
+            width: calc(100% - 1rem);
+            height: 2px;
+            content: "";
+        }
+        
+        #movieSection {
+            background-color: rgb(20, 20, 20);
+            min-height: 100vh;
+            background-image: url("../assets/img/movies/cinema.webp");
+            background-size: cover;
+            position: relative;
+        }
+        
+        #movieSection::before {
+            content: " ";
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .7);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 100%);
+        }
+    </style>	
+</head>
+
     <!-- Owl Stylesheets -->
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
@@ -128,10 +267,10 @@
 			
 			<div id="social" class="centre padding-element-bottom">
 				<div>
-					<a href="https://www.facebook.com/mike.bennett.author" rel="noopener" alt="Facebook link"><img src="social/facebook.png" class="social-icons"></a>
-					<a href="https://www.instagram.com/mikebennettauthor/" rel="noopener" alt="Instagram link"><img src="social/instagram.png" class="social-icons"></a>
-					<a href="https://www.patreon.com/mikebennett" rel="noopener" alt="Patreon link"><img src="social/patreon.png" class="social-icons"></a>
-					<a href="https://www.threads.net/@mikebennettauthor" rel="noopener" alt="X link"><img src="social/threads.png" class="social-icons"></a>
+					<a href="https://www.facebook.com/mike.bennett.author" rel="noopener" alt="Facebook link" target="_blank"><img src="social/facebook.png" class="social-icons"></a>
+					<a href="https://www.instagram.com/mikebennettauthor/" rel="noopener" alt="Instagram link" target="_blank"><img src="social/instagram.png" class="social-icons"></a>
+					<a href="https://www.patreon.com/mikebennett" rel="noopener" alt="Patreon link" target="_blank"><img src="social/patreon.png" class="social-icons"></a>
+					<a href="https://www.threads.net/@mikebennettauthor" rel="noopener" alt="Threads link" target="_blank"><img src="social/threads.png" class="social-icons"></a>
 					<a href="https://podcasts.apple.com/us/podcast/underwood-and-flinch-and-other-tales-by-mike-bennett/id203424910" target="_blank" rel="noopener" alt="Apple"><img src="icons/apple.png" class="social-icons"></a>
 					<a href="https://open.spotify.com/show/3VwIE3bG0zpTCNzRtGpnUV?si=yGtm-HFvQemv87jStwyh5A" target="_blank" rel="noopener" alt="Spotify link"><img src="icons/spotify.png" class="social-icons"></a>
 				</div>
@@ -169,7 +308,58 @@
           </div>          
       </div>
 	  
-	  		<div class="centre">
+	  	<div class="centre">
+			<h2>Listen to the Podcast</h2>
+		</div>	
+		
+		<div class="container">
+            <div class="swiffy-slider slider-item-show3 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-nav-autoplay slider-nav-autopause">
+                <ul class="slider-container py-4">
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/uandf-400.jpg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/bands-400.jpg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/season3-400.jpg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/underground-400.jpg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/season5-400.jpg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                    <li>
+                        <div class="card shadow h-100">
+                            <img src="slider/img/photos/season6-400.jpeg" class="card-img-top" loading="lazy" alt="...">  
+                        </div>
+                    </li>
+                </ul>
+
+                <button type="button" class="slider-nav" aria-label="Go left"></button>
+                <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+                <div class="slider-indicators">
+                    <button class="active" aria-label="Go to slide"></button>
+                    <button aria-label="Go to slide"></button>
+                    <button aria-label="Go to slide"></button>
+                    <button aria-label="Go to slide"></button>
+                    <button aria-label="Go to slide"></button>
+                </div>
+            </div>
+        </div>
+		<div class="centre">
 			<h3>Subscribe</h3>
 		</div>
 		
@@ -340,7 +530,7 @@
 		</div>
 		
 		<div class="lineHeader">
-			<h2>Listen Beyond the Free Podcast</h2>
+			<h2>Podcasts Beyond Season 4</h2>
 		</div>
 
 		<div class="read-pair-parent-element">
@@ -357,7 +547,7 @@
 	<footer class="w3-container" style="padding-top:4em">
 		<div class="text-white w3-padding-24">
 			<div class="lineHeader">
-				<a href="https://www.mikebennettauthor.com/" title="mike bennet author.com" class="w3-hover-opacity">&copy; Mike Bennett 2024</a>
+				<a href="https://www.mikebennettauthor.com/" title="mike bennet author.com" class="w3-hover-opacity">&copy; Mike Bennett 2023</a>
 			</div>
 		</div>
 	</footer>
@@ -420,4 +610,47 @@
     <script src="js/highlight.js"></script>
     <script src="js/app.js"></script>
   </body>
+
+<script>
+	// cut the mustard
+	if ('querySelector' in document && 
+		'addEventListener' in window) {
+
+		var toggleButtons = document.querySelectorAll('.toggle-content');
+		var fullTextWrappers = document.querySelectorAll('.fulltext');
+		var fullText;
+		var toggleButtonText;
+		
+
+		[].forEach.call(fullTextWrappers, function(fullTextWrapper) {
+			// hide all full text on load
+			fullTextWrapper.setAttribute('hidden', true);
+		});
+
+		[].forEach.call(toggleButtons, function(toggleButton) {
+			// show toggle more buttons
+			toggleButton.removeAttribute('hidden');
+
+			// add listener for each button
+			toggleButton.addEventListener('click', function () {
+
+				fullTextWrapper = this.parentElement.querySelector('.fulltext');
+				toggleButtonText = this.querySelector('.text');
+
+				// change attributes and text if full text is shown/hidden
+				if (!fullTextWrapper.hasAttribute('hidden')) {
+					toggleButtonText.innerText = 'Show More';
+					fullTextWrapper.setAttribute('hidden', true);
+					toggleButton.setAttribute('aria-expanded', false);
+				} else {
+					toggleButtonText.innerText = 'Show Less';
+					fullTextWrapper.removeAttribute('hidden');
+					toggleButton.setAttribute('aria-expanded', true);
+				}
+			});
+		});
+	}
+</script>
+	
+</body>
 </html>
