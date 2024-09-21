@@ -762,6 +762,11 @@ hr.style-one {
     margin: 12px 32px;
     padding: 4px 16px;
 }
+
+#spacer {
+	height: 2rem;
+}
+
 .padding-menu {
     display: inline-block;
     padding: 0.4em 1em;
