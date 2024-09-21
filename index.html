@@ -52,143 +52,9 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}</style>
 
-	<link rel="stylesheet" href="slider/css/swiffy-slider.min.css">
-    <script src="slider/js/swiffy-slider.min.js" defer></script>
 
 
-
-    <link href="slider/css/slider-bootstrap.css" rel="stylesheet" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<script>
-        window.addEventListener('load', () => {
-            hljs.highlightAll();
-        });
-
-        function showAndHightlightCode(sliderElement) {
-            const highlightButton = window.event.target;
-            if (!sliderElement) {
-                sliderElement = highlightButton.parentElement.querySelector(".swiffy-slider");
-            }
-            if (!sliderElement) {
-                sliderElement = highlightButton.parentElement;
-            }
-            //Remove excess indention from markup
-            const lines = sliderElement.outerHTML.split("\n");
-            const lastLine = lines[lines.length - 1];
-            const numberOfSpacers = lastLine.indexOf("<");
-            const spaceString = lastLine.substring(0, numberOfSpacers);
-            console.log(numberOfSpacers.length);
-            let markup = "";
-            for (let i = 0; i < lines.length; i++) {
-                const line = lines[i];
-                if (line.startsWith(spaceString)) {
-                    markup += line.substring(numberOfSpacers) + "\n";
-                } else {
-                    markup += line + "\n";
-                }
-            }
-
-            const highlightedCode = hljs.highlight(markup, {
-                language: 'html'
-            }).value;
-
-            const newPre = document.createElement("pre");
-            newPre.classList.add("p-2");
-            newPre.classList.add("p-lg-4");
-            newPre.classList.add("my-2");
-            newPre.classList.add("my-lg-4");
-            newPre.classList.add("bg-light");
-            const newCode = document.createElement("code");
-            newCode.classList.add("language-html");
-            newCode.innerHTML = highlightedCode;
-            newPre.appendChild(newCode);
-
-            highlightButton.parentElement.insertBefore(newPre, null);
-            highlightButton.remove();
-        }
-    </script>
-    <style>
-        html,
-        body {
-            font-family: 'Barlow Semi Condensed', sans-serif;
-            scroll-snap-type: y proximity;
-            scroll-behavior: smooth;
-        }
-        
-        code {
-            border: 1px solid #ececec;
-            border-radius: .25rem;
-        }
-        
-        .navbar-toggler {
-            border: none;
-            border-radius: 0;
-        }
-        
-        .navbar-toggler:focus {
-            box-shadow: none;
-        }
-        
-        .lead {
-            font-size: 1.5rem;
-            font-weight: 300;
-        }
-        
-        .btn-primary {
-            color: #fff;
-            background-color: #DF1E1E;
-            border-color: #DF1E1E;
-        }
-        
-        .btn-outline-primary {
-            color: #DF1E1E;
-            border-color: #DF1E1E;
-        }
-        
-        .btn-outline-white {
-            color: #fff;
-            border-color: #fff;
-        }
-        
-        .btn-link {
-            color: #520000;
-        }
-        
-        .nav-link.active {
-            position: relative;
-        }
-        
-        .nav-link.active::after {
-            position: absolute;
-            border-bottom: 2px solid #fff;
-            display: block;
-            left: .5rem;
-            width: calc(100% - 1rem);
-            height: 2px;
-            content: "";
-        }
-        
-        #movieSection {
-            background-color: rgb(20, 20, 20);
-            min-height: 100vh;
-            background-image: url("../assets/img/movies/cinema.webp");
-            background-size: cover;
-            position: relative;
-        }
-        
-        #movieSection::before {
-            content: " ";
-            display: block;
-            position: absolute;
-            left: 0;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, .7);
-            background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.6) 100%);
-        }
-    </style>	
 </head>
 
     <!-- Owl Stylesheets -->
@@ -282,28 +148,28 @@
 			<h2>The U&F Saga: Podcasting Since 2008</h2>
 		</div>
 
-    <!--  Demos -->
+    <!--  Carousel -->
     <section id="carousel">
       <div class="row carousel-padding">
         <div class="large-12 columns">
           <div class="owl-carousel owl-theme">
             <div class="item">
-              <img src="slider/img/uandf-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/uandf-400.jpg" class="card-img-top" loading="lazy" alt="...">
             </div>
             <div class="item">
-              <img src="slider/img/bands-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/bands-400.jpg" class="card-img-top" loading="lazy" alt="...">
             </div>
             <div class="item">
-              <img src="slider/img/season3-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/season3-400.jpg" class="card-img-top" loading="lazy" alt="...">
             </div>
             <div class="item">
-              <img src="slider/img/underground-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/underground-400.jpg" class="card-img-top" loading="lazy" alt="...">
             </div>
             <div class="item">
-              <img src="slider/img/season5-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/season5-400.jpg" class="card-img-top" loading="lazy" alt="...">
             </div>
             <div class="item">
-              <img src="slider/img/season6-400.jpg" class="card-img-top" loading="lazy" alt="...">
+              <img src="img/carousel/season6-400.jpeg" class="card-img-top" loading="lazy" alt="...">
             </div>
           </div>          
       </div>
@@ -312,53 +178,7 @@
 			<h2>Listen to the Podcast</h2>
 		</div>	
 		
-		<div class="container">
-            <div class="swiffy-slider slider-item-show3 slider-item-reveal slider-nav-outside slider-nav-round slider-nav-visible slider-indicators-outside slider-indicators-round slider-indicators-dark slider-nav-animation slider-nav-animation-fadein slider-nav-autoplay slider-nav-autopause">
-                <ul class="slider-container py-4">
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/uandf-400.jpg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/bands-400.jpg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/season3-400.jpg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/underground-400.jpg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/season5-400.jpg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                    <li>
-                        <div class="card shadow h-100">
-                            <img src="slider/img/photos/season6-400.jpeg" class="card-img-top" loading="lazy" alt="...">  
-                        </div>
-                    </li>
-                </ul>
-
-                <button type="button" class="slider-nav" aria-label="Go left"></button>
-                <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
-
-                <div class="slider-indicators">
-                    <button class="active" aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
-                    <button aria-label="Go to slide"></button>
-                </div>
-            </div>
-        </div>
+		
 		<div class="centre">
 			<h3>Subscribe</h3>
 		</div>
